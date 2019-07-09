@@ -40,7 +40,23 @@
 
 <script type="text/javascript">
 
-	// your solution here
+  $(document).ready(function() {
+    var stop = false;
+    
+    $('.btn.btn-light.float-right').on('click', function(){
+      stop = true;
+    });
+    
+    $(function(){
+      setInterval(addBubble, 1000);
+    });
+
+    function addBubble() {
+      if(!stop) {
+        $(".shape-container").append("<div class='p2-circle bg-purple'></div>");
+      }
+    }
+  });
 
 </script>
 </body>
